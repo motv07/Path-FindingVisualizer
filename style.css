@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#grid {
+  display: grid;
+  /* grid-template-columns: repeat(50, 20px);
+  grid-template-rows: repeat(20, 20px); */
+  gap: 1px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cell {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+.cell.wall {
+  background-color: black;
+}
+
+.cell.start {
+  background-color: green;
+}
+
+.cell.end {
+  background-color: red;
+}
