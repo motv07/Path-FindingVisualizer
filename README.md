@@ -15,7 +15,7 @@ This project is a **Pathfinding Visualizer** built with HTML, CSS, and JavaScrip
 ## Folder Structure
 
 ```
-project4/pathfinding-visualizer/
+pathfinding-visualizer/
 ├── index.html                  # Main HTML file
 ├── script.js                   # Controls interaction and visualization
 ├── style.css                   # Styles for layout and animations
