@@ -29,12 +29,11 @@ This project goes far beyond basic pathfinding by introducing **dynamic custom w
   * *Shortest Path Glow:* The final optimized path illuminates in a bright yellow trace.
 * **Safe Asynchronous Execution:** Advanced timeout tracking ensures that clearing the grid instantly halts any currently running visualizations without UI ghosting or overlaps.
 
----
-
 ## 🧠 Supported Algorithms
 
 This visualizer implements both unweighted and weighted graph search algorithms, highlighting the difference between blind searching and cost-optimized routing.
 
+### 🔍 Pathfinding Algorithms (The Solvers)
 | Algorithm | Type | Weighted? | Time Complexity | Description |
 | :--- | :--- | :---: | :--- | :--- |
 | **Dijkstra's Algorithm** | Single-Source | ✅ Yes | $O(E \log V)$ | The gold standard for pathfinding. It guarantees the absolute shortest path by prioritizing the exploration of lowest-cost nodes first. |
@@ -42,6 +41,12 @@ This visualizer implements both unweighted and weighted graph search algorithms,
 | **Depth-First Search (DFS)** | Single-Source | ❌ No | $O(V + E)$ | Plunges as deep as possible along a single branch before backtracking. *Implemented iteratively using a Stack to safely explore 10,000+ nodes without exceeding the browser's maximum call stack size.* |
 | **Bellman-Ford** | Single-Source | ✅ Yes | $O(V \times E)$ | Computes shortest paths from a single source vertex to all other vertices. Mathematically supports negative edge weights. |
 | **Floyd-Warshall** | All-Pairs | ✅ Yes | $O(V^3)$ | A dynamic programming algorithm that computes the shortest path between *every single pair* of nodes simultaneously.<br><br>⚠️ *Includes a software guardrail to prevent browser crashes on grids larger than 300 nodes, accompanied by an asynchronous "Calculating" UI state.* |
+
+### 🏗️ Maze Generation Algorithms (The Builders)
+| Algorithm | Type | Description |
+| :--- | :--- | :--- |
+| **Prim's Algorithm** | Randomized MST | Carves a "Perfect Maze" out of a solid grid of walls. It guarantees that the entire maze is fully connected with absolutely no loops, meaning there is only one mathematically unique path between the start and end nodes. |
+| **Random Scatter** | Noise | Scatters individual walls and weighted nodes across the grid based on probability thresholds, creating an open-world environment perfect for testing Dijkstra's weight optimizations. |
 
 ---
 
